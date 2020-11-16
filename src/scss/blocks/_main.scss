@@ -1,0 +1,270 @@
+.main{
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   margin-top: 3em;
+   padding: 3em 0;
+}
+
+.activePlayer{
+   position: absolute;
+   width: 100%;
+   text-align: center;
+   color: $txt-clr-dark;
+   font-weight: bold;
+   font-family: $ff-title;
+   font-size: 3em;
+   top: 30px;
+   transform: scale(0);
+
+   &--show{
+      transform: scale(1);
+   }
+
+}
+
+.scores{
+   width: 80%;
+   margin: 20px auto;
+   font-size: 1.1rem  ;
+   display: flex;
+   justify-content: space-between;
+   color: red;
+   font-family: courier;
+   z-index: -1;
+
+   transform: scale(0);
+
+   @include laptop {
+      width: 100%;
+      padding: 0 25px;
+      justify-content: space-between ;
+      position: absolute;
+      top: 30px;
+   }
+
+   &--show{
+      transform: scale(1);
+   }
+
+}
+
+.user-best,
+.best {
+   width: 180px;
+   padding: 1rem;
+   background: $panel; 
+   border-radius: 5px;
+   box-shadow: 0 0 0 2px $txt-clr-dark;
+   text-align: center;
+   &-title{
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+   }
+}
+
+.start-btn {
+   border-radius: 50%;
+   font-size: 2em;
+   background-color: lightgray;
+
+   &:active{
+      transform: scale(.95);
+   }
+}
+
+.led-score{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   vertical-align: center;
+   justify-content: center;
+}
+
+.btn-onOff{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.switches {
+   position: absolute;
+   font-family: $ff-body;
+}
+
+.label-scores {
+   font-size: 1.1em;
+}
+
+.label-switch {
+   font-size: 1.1em;
+}
+
+.game-title {
+   font-family: $ff-body;
+   font-size: 2.5em;
+   
+   @include laptop {
+      font-size: 3em;
+   }
+}
+
+.level {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: $panel;
+   color: red;
+   font-family: courier;
+   font-size: 2em;
+   font-weight: bold;
+   height: 30px;
+   width: 60px;
+   text-align: center;
+}
+
+.game-pad {
+   background: #385a94;
+   border-radius: 50%;
+   height: 80vw;
+   width: 80vw;
+   position: relative;
+   border-style: solid;
+   border-width: 5px;
+   margin: auto;
+   margin-top: 60px;
+   box-shadow: 8px 8px 15px 5px #888888;
+
+   @include table {
+      height: 60vw;
+      width: 60vw;
+   }
+
+   @include laptop {
+      height: 40vw;
+      width: 40vw;
+   }
+
+}
+
+.pad,
+.inner-circle {
+   position: absolute;
+   height: 40vw;
+   width: 40vw;
+   border-style: solid;
+   border-width: 5px;
+   box-sizing: border-box;
+   top: 50%;
+   left: 50%;
+   cursor: pointer;
+
+   @include table {
+      height: 30vw;
+      width: 30vw;
+   }
+
+   @include laptop {
+      height: 20vw;
+      width: 20vw;
+   }
+
+}
+
+.green {
+   border-radius: 100% 0 0 0;
+   background: $green-off;
+   margin: -40vw 0 0 -40vw;
+
+   &--on{
+      background: $green-on;
+   }
+   
+   @include table {
+      margin: -30vw 0 0 -30vw;
+   }
+
+   @include laptop {
+      margin: -20vw 0 0 -20vw;
+   }
+}
+
+.red {
+   border-radius: 0 100% 0 0;
+   background: $red-off;
+   margin: -40vw 0 0 0;
+
+&--on{
+      background: $red-on;
+   }
+
+   @include table {
+      margin: -30vw 0 0 0;
+   }
+
+   @include laptop {
+      margin: -20vw 0 0 0;
+   }
+}
+
+.gold {
+   border-radius: 0 0 0 100%;
+   background: $yellow-off;
+   background: goldenrod;
+   margin: 0 -40vw 0 -40vw;
+
+&--on{
+      background: $yellow-on;
+   }
+   
+   @include table {
+      margin: 0 -30vw 0 -30vw;
+   }
+
+   @include laptop {
+      margin: 0 -20vw 0 -20vw;
+   }
+
+}
+
+.blue {
+   border-radius: 0 0 100% 0;
+   background: $blue-off;
+   margin: 0 0 -40vw 0;
+
+&--on{
+      background: $blue-on;
+   }
+   
+   @include table {
+      margin: 0 0 -40vw 0;
+   }
+
+      @include laptop {
+      margin: 0 0 -20vw 0;
+   }
+}
+
+.inner-circle {
+  background: grey;
+  border-radius: 50%;
+  border-width: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: -20vw 0 0 -20vw;
+
+   @include table {
+      margin: -15vw 0 0 -15vw;
+   }
+
+   @include laptop {
+      height: 16vw;
+      width: 16vw;
+      margin: -8vw 0 0 -8vw;
+   }
+}
